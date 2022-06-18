@@ -1,11 +1,11 @@
 // pipeline{}
 
 node{
- stage('Test'){
+ stage('Test') {
    echo "Test completed"
  }
 
- stage('Test1'){
+ stage('Test1') {
    echo "Test1 completed"
  }
 
