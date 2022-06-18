@@ -4,7 +4,7 @@ node {
     echo 'Hello world'
 }
 
-  stage ('Test')
+  stage ('Test'){
     echo 'Hello world'
-
+}
 }
