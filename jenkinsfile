@@ -1,0 +1,10 @@
+node {
+
+  stage ('Test'){
+    echo 'Hello world'
+}
+
+  stage ('Test')
+    echo 'Hello world'
+
+}
