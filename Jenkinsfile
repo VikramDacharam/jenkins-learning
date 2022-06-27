@@ -1,12 +1,11 @@
 pipeline {
   agent {
-     node {
-       label 'workstation1'
-       }
-     }
-   }
+    node {
+      label 'ansible'
+    }
+  }
 
-   stages {
+  stages {
 
      stage('Test') {
        steps{
@@ -19,6 +18,7 @@ pipeline {
         }
       }
    }
+}
 //node{
 //  stage('Test') {
 //   echo "Test completed"
