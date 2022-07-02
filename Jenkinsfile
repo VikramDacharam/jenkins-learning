@@ -5,6 +5,11 @@ pipeline {
     }
   }
 
+  options {
+    disableConcurrentBuilds()
+    ansiColor('xterm')
+  }
+
   environment {
     DEMO_URL = "google.com"
     SSH = credentials("SSH")
@@ -21,6 +26,7 @@ pipeline {
          echo 'Hello world'
          echo DEMO_URL
          echo SSH
+         sh 'echo -e "\\e[32mHello"'
        }
      }
       stage('Test1') {
