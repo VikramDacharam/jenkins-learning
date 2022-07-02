@@ -26,7 +26,7 @@ pipeline {
          echo 'Hello world'
          echo DEMO_URL
          echo SSH
-         sh 'echo -e "\\e[32mHello"'
+         sh 'echo -e "\\e[31mHello"'
        }
      }
       stage('Test1') {
