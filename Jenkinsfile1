@@ -19,7 +19,7 @@ pipeline {
 
     stage('Create ec2 server') {
       steps{
-        sh 'bash create-ec2-with-env.sh ${ENV}s'
+        sh 'bash create-ec2-with-env.sh ${ENV}'
 
       }
     }
