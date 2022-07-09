@@ -8,6 +8,9 @@ pipeline {
     choice(name: 'ENV', choices: ['dev', 'prod'], description: 'Pick ENV')
     choice(name: 'COMPONENT' , choices: ['frontend', 'catalogue', 'mongodb'], description: 'Pick Component')
   }
+  environment {
+    SSH = credentials('SSH')
+  }
 
   stages {
 
@@ -19,7 +22,7 @@ pipeline {
 
     stage ('Run Ansible') {
       steps {
-        sh 'ansible-playbook -i inv roboshop.yml -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT}'
+        sh 'ansible-playbook -i inv roboshop.yml -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT} -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW}'
 
       }
     }
