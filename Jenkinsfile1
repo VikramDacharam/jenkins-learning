@@ -19,7 +19,7 @@ pipeline {
 
     stage ('Run Ansible') {
       steps {
-        sh 'ansible-playbook -i inv roboshop.yml -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT} -e ENV=${ENV}'
+        sh 'create-ec2.sh'
 
       }
     }
