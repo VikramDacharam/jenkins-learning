@@ -1,4 +1,4 @@
-pipeline {
+/* pipeline {
   agent {
     node {
       label 'ansible'
@@ -9,8 +9,8 @@ pipeline {
     disableConcurrentBuilds()
     ansiColor('xterm')
   }
-  // triggers { cron('*/5 * * * *') }
-     triggers { pollSCM('*/1 * * * *') }
+  // triggers { cron('*//*  *//* 5 * * * *') }
+     triggers { pollSCM('*//*  *//* 1 * * * *') }
 
   parameters {
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -53,8 +53,8 @@ pipeline {
        echo 'OK'
      }
    }
-}
-//node{
+} */
+// node{
 //  stage('Test') {
 //   echo "Test completed"
 //  }
@@ -63,3 +63,21 @@ pipeline {
 //    echo "Test1 completed"
 //  }
 //  }
+
+pipeline {
+  agent any {
+
+  tools {
+    maven 'maven'
+  }
+
+    stages(one) {
+      steps{
+        sh 'mvn --version'
+      }
+
+    }
+
+  }
+
+}
