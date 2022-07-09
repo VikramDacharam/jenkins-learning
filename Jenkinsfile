@@ -9,6 +9,8 @@ pipeline {
     disableConcurrentBuilds()
     ansiColor('xterm')
   }
+  // triggers { cron('*/5 * * * *') }
+     triggers { pollSCM('*/4 * * * *') }
 
   parameters {
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
