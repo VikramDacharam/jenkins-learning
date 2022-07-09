@@ -1,7 +1,7 @@
 /* pipeline {
-//  agent {
- //   node {
- //     label 'ansible'
+    agent {
+      node {
+        label 'ansible'
     }
   }
 
@@ -65,7 +65,11 @@
 //  }
 
 pipeline {
-  agent any
+  agent {
+        node {
+          label 'ansible'
+      }
+    }
 
   tools {
     maven 'maven'
