@@ -29,7 +29,7 @@ pipeline {
 
     stage(' Run Ansible ') {
       steps {
-        sh 'ansible-playbook -i inv --ask-vault-pass roboshop.yml -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT} -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW}'
+        sh 'ansible-playbook -i inv roboshop.yml -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT} -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW}'
 
       }
     }
