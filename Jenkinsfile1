@@ -19,7 +19,7 @@ pipeline {
 
     stage ('Run Ansible') {
       steps {
-        sh 'create-ec2.sh'
+        sh 'bash create-ec2.sh'
 
       }
     }
