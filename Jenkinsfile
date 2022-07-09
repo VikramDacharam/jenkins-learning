@@ -22,7 +22,6 @@ pipeline {
 
   environment {
     DEMO_URL = "google.com"
-    DEMO_URL = "gmail.com"
     SSH = credentials("SSH")
 
   }
