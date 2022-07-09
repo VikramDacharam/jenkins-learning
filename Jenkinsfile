@@ -1,7 +1,7 @@
 /* pipeline {
-  agent {
-    node {
-      label 'ansible'
+//  agent {
+ //   node {
+ //     label 'ansible'
     }
   }
 
