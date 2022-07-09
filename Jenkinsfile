@@ -71,11 +71,14 @@ pipeline {
     maven 'maven'
   }
 
-    stages(one) {
+  stages{
+    stage('One') {
       steps{
         sh 'mvn --version'
       }
 
     }
+
+  }
 
 }
