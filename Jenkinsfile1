@@ -17,9 +17,9 @@ pipeline {
       }
     }
 
-    stage('Run ansible') {
+    stage('Run Ansible') {
       steps{
-        sh 'ansible-playbook -i inv roboshop.yml -e HOST=${COMPONENT} -e ROLL_NAME=${COMPONENT} -e ENV=${ENV}'
+        sh 'ansible-playbook -i inv roboshop.yml -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT} -e ENV=${ENV}'
 
       }
     }
