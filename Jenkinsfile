@@ -70,15 +70,23 @@ pipeline {
           label 'ansible'
       }
     }
-
   tools {
     maven 'maven'
   }
 
   stages{
     stage('One') {
+      input {
+        message "will you approve?"
+        ok "Yes"
+        submitter "admin"
+        parameters {
+          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                      }
+      }
       steps{
-        sh 'mvn --version'
+       // sh 'mvn --version'
+       sh 'echo PERSON=${PERSON}'
       }
     }
   }
