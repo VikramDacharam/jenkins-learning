@@ -107,7 +107,7 @@ pipeline{
       stage('high-level1'){
         when {
           expression {
-            ENV == 'prod'
+            ENV == 'dev'
           }
         }
 
