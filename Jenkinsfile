@@ -107,7 +107,7 @@ pipeline{
       stage('high-level1'){
         when {
           expression {
-            ENV == 'dev'
+            ENV == 'prod'
           }
         }
 
@@ -121,7 +121,7 @@ pipeline{
 
         stage('two'){
           steps {
-            sh 'echo one'
+            sh 'echo two'
           }
         }
 
