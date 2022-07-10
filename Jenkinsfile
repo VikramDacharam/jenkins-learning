@@ -94,7 +94,9 @@ pipeline {
 } */
 
 pipeline{
-  agent any
+  agent{
+    node ansible
+  }
 
   environment {
     ENV = 'dev'
