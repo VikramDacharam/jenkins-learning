@@ -64,7 +64,7 @@
 //  }
 //  }
 
-/*
+
 pipeline {
   agent {
         node {
@@ -91,46 +91,6 @@ pipeline {
       }
     }
   }
-} */
-
-pipeline{
-  agent {
-    node {
-      label 'ansible'
-    }
-  }
-  environment {
-    ENV = 'dev'
-  }
-
-    stages{
-      stage('high-level1'){
-        when {
-          expression {
-            ENV == 'prod'
-          }
-        }
-
-        stages{
-          stage('One'){
-            steps {
-              sh 'echo one'
-
-            }
-          }
-
-        stage('two'){
-          steps {
-            sh 'echo two'
-          }
-        }
-
-
-
-        }
-      }
-
-
-    }
-
 }
+
+
